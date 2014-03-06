@@ -1,0 +1,56 @@
+Breakdown of User Stories Sprint 1:
+
+2. Sys Admin: assign ID and Password
+	Registration Page from Login
+	Creates Table: UserID, FName, LName, PWord, UserType
+	Validate Entry and Store in Database
+	On Login redirects to appropriate HTML
+	
+5. Cust Serv: Count failures per time for IMSI
+	Query Page takes in an IMSI and 2 dates via a Date Picker
+	To Date defaults to today's date
+	Validate IMSI is correct length - disable button until correct and it exists, if failure exists in time period it adds 1 to count
+	Output is red text of cell for errors otherwise single line stating count
+	
+6. Cust Serv: See CauseCodes per IMSI failures
+	Query Page takes in an IMSI
+	Validate IMSI is correct length - disable button until correct and it exists
+	Returns all Event IDs and Cause Codes and their descriptions in scrollable text panel
+	
+7. Supp Eng: List all IMSIs with failures per time
+	Query Page takes in 2 dates via a Date Picker
+	Returns IMSI and potentially a count of failures in scrollable text panel
+	
+8. Supp Eng: Count of a model of phone, number of failures per time
+	Query Page takes in a Model and 2 dates via a Date Picker
+	Model options from autocomplete/dropdown menu - no need for validation - if it does not match a stored value then red text
+	Returns a count of all failures for this time period	
+	
+9. Net Eng: Count per IMSI, failures & duration per time
+	Query Page takes in 2 dates via a Date Picker
+	Returns all IMSIs with failures and their codes and their accumulated duration
+	
+10. Net Eng: List Unique failure & Cause Code combos with number of occurrences per model of phone.
+	Query page takes in Model
+	Model options from autocomplete/dropdown menu - no need for validation - if it does not match a stored value then red text
+	Return all EventID and Cause Code combos for these models and the count of instances occurring.
+	
+11. Net Eng: Top 10 MCC/MNC/Cell Id combos of call failures per time period.
+	Query Page takes in 2 dates via a Date Picker
+	Returns ranked Top 10 MCC/MNC/CellID combos in scrollable text panel
+	Group by count, order by count and limit 10
+
+12. Net Eng: Top 10 IMSIs that had call failures per time period
+	Query Page takes in 2 dates via a Date Picker
+	Returns ranked Top 10 IMSI/Call Failure Code Combos
+	Group by count, order by count and limit 10
+
+14. Supp Eng: Display IMSIs per Cause Class
+	Query Page takes in a Cause Class
+	Returns all IMSIs with this Cause Class
+	
+15. Supp Eng: capable of using Cust Serv enquiries
+	Upon Login redirected to Home page displaying SE's queries alongside CSR's queries
+	
+16. Net Eng: capable of using Cust Serv and Supp Eng enquiries
+	Upon Login redirected to Home page displaying NE's queries alongside SE's queries and CSR's queries
