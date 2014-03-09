@@ -21,7 +21,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 	public BaseData baseData;
 	public CellTable cellTable;
 	public int eventCauseID, mccmncID;
-	public ArrayList<Integer>invalidColumns=new ArrayList();
+	public static ArrayList<Integer>invalidColumns=new ArrayList();
 
 	SimpleDateFormat sdf = new SimpleDateFormat("");
 	java.util.Date time = new java.util.Date();
@@ -155,7 +155,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 	
 	
 
-	private void findInvalidColumn(ArrayList<Integer> columnValues) {
+	public void findInvalidColumn(ArrayList<Integer> columnValues) {
 		for(Integer columnValue:columnValues){
 			if(columnValue==0){
 				baseDate="01/01/0001 00:00";
@@ -191,7 +191,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		
 	}
 
-	private boolean checkHIERIDs(String HIERID3, String HIERID32, String HIERID321) {
+	public static boolean checkHIERIDs(String HIERID3, String HIERID32, String HIERID321) {
 		
 		if((HIERID3.matches("[0-9]+")||HIERID3.matches("[0-9]+")||HIERID3.matches("[0-9]+"))){
 			return true;
@@ -209,7 +209,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		return false;
 	}
 
-	private boolean checkIMSI(String imsiColumnValue) {
+	public static boolean checkIMSI(String imsiColumnValue) {
 		if(imsiColumnValue.length()==15 && imsiColumnValue.matches("[0-9]+")){
 			return true;
 		}
@@ -218,7 +218,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		return false;
 	}
 
-	private boolean checkCellIdAndDuration(String cellIdColumnValue, String durationColumnValue) {
+	public static boolean checkCellIdAndDuration(String cellIdColumnValue, String durationColumnValue) {
 	
 		if (!cellIdColumnValue.matches("[0-9]+")){
 			invalidColumns.add(6);
@@ -233,7 +233,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		return true;	
 	}
 
-	private boolean checkMCCAndMNC(String mccColumnValue, String mncColumnValue) {
+	public static boolean checkMCCAndMNC(String mccColumnValue, String mncColumnValue) {
 		
 		if(PersistenceUtil.findCountry(Integer.parseInt(mccColumnValue))==null){
 			invalidColumns.add(4);
@@ -249,7 +249,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		return false;
 	}
 
-	private boolean checkTAC(String tacColumnValue) {
+	public static boolean checkTAC(String tacColumnValue) {
 		
 		if(PersistenceUtil.findTAC(tacColumnValue)!=null){
 			return true;
@@ -260,7 +260,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		}		
 	}
 	
-	private boolean checkFailureClass(String failureClassColumnValue) {
+	public static boolean checkFailureClass(String failureClassColumnValue) {
 		try{
 			int failureClassAsInt=Integer.parseInt(failureClassColumnValue);
 			
@@ -279,7 +279,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		}
 	}
 
-	private boolean checkEventIdAndCauseCode(String eventIdColumnValue, String causeCodeColumnValue) {
+	public static boolean checkEventIdAndCauseCode(String eventIdColumnValue, String causeCodeColumnValue) {
 		
 		try{
 			int eventIdAsInt=Integer.parseInt(eventIdColumnValue);
@@ -315,7 +315,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		
 	
 	
-	private boolean checkDateFormat(String dateColumnValue){
+	public static boolean checkDateFormat(String dateColumnValue){
 		
 		Date dateToCheck;
 		try {
@@ -332,7 +332,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 	}
 	
 	
-	public void storeErrors(String columnDescription, String cellContents){
+	public static void storeErrors(String columnDescription, String cellContents){
 		PrintWriter pw;
 		try{
 			pw=new PrintWriter(new FileWriter("errorLog.csv",true));
@@ -348,7 +348,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		}
 	}
 
-	public void storeErrors(String columnDescription, String cellContents1, String cellContents2){
+	public static void storeErrors(String columnDescription, String cellContents1, String cellContents2){
 		PrintWriter pw;
 		try{
 			pw=new PrintWriter(new FileWriter("errorLog.csv",true));
@@ -363,7 +363,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		}
 	}
 	
-	public void storeErrors(String columnDescription, String cellContents1, String cellContents2, String cellContents3){
+	public static void storeErrors(String columnDescription, String cellContents1, String cellContents2, String cellContents3){
 		PrintWriter pw;
 		try{
 			pw=new PrintWriter(new FileWriter("errorLog.csv",true));

@@ -1,5 +1,7 @@
-import static org.junit.Assert.*;
+package testing;
 
+
+import static org.junit.Assert.*;
 
 import java.text.ParseException;
 import main.BaseDataAndCellTableConfig;
@@ -138,8 +140,6 @@ public class Test {
 	}
 	
 	
-	public class Test {
-
 	@org.junit.Test
 	public void testCheckHIERIDs() {
 		assertTrue(BaseDataAndCellTableConfig.checkHIERIDs("4809532081614990000", "8226896360947470000", "1150444940909480000"));
