@@ -12,8 +12,12 @@
 	<a href="/Database/upload.jsp"><button type="button">Upload</button></a>
 	<br>
 	<a href="/Database/query.html"><button type="button">Query database</button></a>
+	<br>
+	<a href="/Database/failureCauseQuery.html"><button type="button">Query FailureID and CauseCode</button></a>
 	<br><br><br>
-	<a href="/Database/index.html">Logout</a>
+	<form action="LogoutServlet" method="post">
+		<input type="submit" value="Logout">
+	</form>
 	</div>
 </body>
 </html>
