@@ -5,15 +5,18 @@
 
 
 
-	<form action="Query" method="post">
-		<p>Please enter an IMSI to return the Event IDs and Cause Codes
-			associated
+	<form action="FailureCauseQuery" method="post">
+		<p>Enter an Event ID and cause code to return affected IMSIs
 		<p>
 			<br>
 		<table align="center">
 			<tr>
-				<td><font face="verdana" size="2px">IMSI:</font></td>
-				<td><input type="text" name="IMSI"></td>
+				<td><font face="verdana" size="2px">FailureID:</font></td>
+				<td><input type="text" name="EventID"></td>
+			</tr>
+			<tr>
+				<td><font face="verdana" size="2px">Cause Code:</font></td>
+				<td><input type="text" name="CauseCode"></td>
 			</tr>
 
 		</table>

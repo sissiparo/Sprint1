@@ -49,7 +49,7 @@ public class Upload extends HttpServlet {
                         }
  
                         
-                        File path = new File("C:/Users/c09409661/Desktop/NewWorkspace/Database2");
+                        File path = new File("C:/Users/Mobile/Desktop/C09409661.Assignment2/ws/Project8March");
                         if (!path.exists()) {
                             boolean status = path.mkdirs();
                         }
