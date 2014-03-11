@@ -1,22 +1,40 @@
-<!doctype html>
-<html lang="en">
+<!Doctype html>
+<html>
+<body background="images/light.jpg" >
+<form>
 <head>
-  <meta charset="utf-8">
-  <title>jQuery UI Datepicker - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-  </script>
+<script language="javascript" type="text/javascript" src="datetimepicker.js">
+
+</script>
 </head>
-<body>
- 
-<p>Date: <input type="text" id="datepicker"></p>
- 
- 
+<p>pick a date<p>
+<table width="700" cellspacing=0 border="0" cellpadding="0" align="center" summary="">
+	  <tr>
+	  	<td>
+	  		<div class="subtitle">Date</div>	
+	  	
+	  	</td>
+	  </tr>
+	  <tr>
+	  	<td>
+	  		<input type="Text" name="Date" id="Date" maxlength="25" size="25" value ="2013-11-01"><a href="javascript:NewCal('Date','ddmmmyyyy',true,24)"><img src="images/cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+	  		<span class="descriptions"> Select date..</span>
+	  	</td>
+	  </tr>
+	  <br>
+       
+</table>
+   <div style="text-align: center">
+      <input type="submit" value="Submit" align="center">
+   </div>
+   <br>
+   
+   		<div style="text-align: left">
+			<a href="/Database/navigation.html">Back</a>
+			<br>
+			<a href="/Database/index.html">Logout</a>
+		</div>
+</form>
+
 </body>
 </html>
