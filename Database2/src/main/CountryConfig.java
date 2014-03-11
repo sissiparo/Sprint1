@@ -6,7 +6,7 @@ import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 
-public class CountryConfig extends SuperConfig {
+public class CountryConfig extends SuperConfig2 {
 
 	public CountryConfig() {
 		super();

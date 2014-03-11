@@ -13,6 +13,6 @@ public class Driver {
 		MCCMNCConfig mccmncConfig = new MCCMNCConfig();
 		UEModelConfig ueModelConfig = new UEModelConfig();
 		UserEquipmentConfig ueConfig = new UserEquipmentConfig();
-		BaseDataAndCellTableConfig pe = new BaseDataAndCellTableConfig();
+		BaseDataAndCellTableConfig2 pe = new BaseDataAndCellTableConfig2();
 	}
 }

@@ -6,7 +6,7 @@ import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 
-public class FailureConfig extends SuperConfig {
+public class FailureConfig extends SuperConfig2 {
 
 	public FailureConfig() {
 		super();

@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import java.text.ParseException;
 
-import main.BaseDataAndCellTableConfig;
+import main.BaseDataAndCellTableConfig2;
 
 import org.junit.Test;
 
@@ -13,10 +13,10 @@ public class PersistenceTest {
 	@Test
 	public void testParseDate() throws ParseException {
 
-		assertEquals("2013-08-12", BaseDataAndCellTableConfig.parseDate("8/12/13 12:00").toString());
-		assertNotSame("2013-07-12", BaseDataAndCellTableConfig.parseDate("8/12/13 12:00").toString());
-		assertNotSame("2011-08-12", BaseDataAndCellTableConfig.parseDate("8/12/13 12:00").toString());
-		assertNotSame("2013-08-10", BaseDataAndCellTableConfig.parseDate("8/12/13 12:00").toString());
+		assertEquals("2013-08-12", BaseDataAndCellTableConfig2.parseDate("8/12/13 12:00").toString());
+		assertNotSame("2013-07-12", BaseDataAndCellTableConfig2.parseDate("8/12/13 12:00").toString());
+		assertNotSame("2011-08-12", BaseDataAndCellTableConfig2.parseDate("8/12/13 12:00").toString());
+		assertNotSame("2013-08-10", BaseDataAndCellTableConfig2.parseDate("8/12/13 12:00").toString());
 
 	}
 

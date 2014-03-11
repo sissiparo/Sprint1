@@ -6,7 +6,7 @@ import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 
-public class EventCauseConfig extends SuperConfig {
+public class EventCauseConfig extends SuperConfig2 {
 
 	public EventCauseConfig() {
 		super();

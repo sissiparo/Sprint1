@@ -1,0 +1,80 @@
+/* CSS Document - http://webtuts.wat2tutorial.com */
+div.button {
+    width: 450px;
+	height:auto;
+}
+span.main a {
+    display: block;
+    width: 450px;	
+    height: 50px;
+    text-align: center;	
+    color: #FFF;	
+    font: bold 17px/50px Arial;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+span.red a {
+	background: #FC5E5E;
+}
+
+span.blue a {
+	background: #00b7ea;
+}
+
+span.green a {
+	background: #75d68a
+}
+
+
+span.bottom a{
+    display: block;
+    position: absolute;	
+    z-index: -1;	
+    width: 430px;	
+    height: 40px;	
+    background: #000;
+    color: #FFF;		
+    margin: -45px 0 0 10px;
+    font: bold 6.5px/45px Arial;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;	
+    transition: margin 0.5s ease;
+	-webkit-transition: margin 0.5s ease;
+    -moz-transition: margin 0.5s ease;
+    -o-transition: margin 0.5s ease;
+    -ms-transition: margin 0.5s ease;
+}
+
+
+
+div.button span a {
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);	
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    -moz-border-radius: 10px;	
+    -moz-box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/*---------------  HOVER  ---------------
+-----------------------------------------*/
+.button:hover span.top a{ 
+	margin: -82px 0 0 10px; 
+}
+.button:hover span.bottom a{ 
+	margin: -7px 0 0 10px; 
+}
+
+/*---------------  ACTIVE  -------------- 
+-----------------------------------------*/
+.button a:active {
+    background: #FB4C4C;
+}
+.button:active span.top a{
+	margin: -82px 0 0 10px; 
+}
+.button:active span.bottom a{ 
+	margin: -7px 0 0 10px 
+}
