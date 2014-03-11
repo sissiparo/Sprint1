@@ -23,7 +23,12 @@ import java.util.Iterator;
  
 public class Upload extends HttpServlet {
  
-    protected void doPost(HttpServletRequest req, HttpServletResponse res)
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
         boolean isMultipart = ServletFileUpload.isMultipartContent(req);
  
@@ -49,7 +54,7 @@ public class Upload extends HttpServlet {
                         }
  
                         
-                        File path = new File("C:/Users/c09409661/Desktop/NewWorkspace/Database2");
+                        File path = new File("/home/fergie/Documents/GROUP_PROJECT/testData");
                         if (!path.exists()) {
                             boolean status = path.mkdirs();
                         }

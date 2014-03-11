@@ -1,28 +1,29 @@
 package servlet;
 
-import java.io.*;
-import java.util.*;
-
-import javax.sql.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Query extends HttpServlet {
-	public void service(HttpServletRequest req,
-			HttpServletResponse res)
-					throws IOException, ServletException{
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-		String destination = "/query.html";
+
+public class Query8 extends HttpServlet {
+	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+
+		String destination = "/query8.html";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
 
 
-		String imsi = req.getParameter("IMSI");
+		String model = req.getParameter("model");
 
 		res.setContentType("text/html");
 		PrintWriter out = res.getWriter();
@@ -30,18 +31,18 @@ public class Query extends HttpServlet {
 		out.print("</div>");
 		out.print("<img alt='header' src='images/logo.gif' id='header' width=100%  />"); 
 		out.print("<br><div style='text-align: left'>");
-		out.print("<a href='/Database/query.html'>Back</a><br>");
+		out.print("<a href='/Database/query8.html'>Back</a><br>");
 		out.print("<center><h1>Query results</h1></center>");
 		out.print("<br><br>");
-		if(imsi.length()==15){
-		out.print("IMSI="+imsi);
+		if(!(model==null)){
+		out.print("Model="+model);
 		out.print("<br><br>");
 		out.print("<html><body><table align='center' border=\"1\" cellspacing=10 cellpadding=5>");
-		out.print("<th>Event ID</th>"); 
-		out.print("<th>Cause Code</th>"); 
+		out.print("<th># of failures</th>"); 
+		out.print("<th></th>"); 
 		}
 		else{
-			out.print("<font color='red'>Invalid IMSI!</font>");
+			out.print("<font color='red'>Invalid model!</font>");
 		}
 		// connecting to database
 		Connection con = null;  
@@ -59,8 +60,8 @@ public class Query extends HttpServlet {
 					("jdbc:mysql://localhost:3306/" + database,user,password);
 			stmt = con.createStatement();
 
-			rs = stmt.executeQuery("SELECT imsi, eventID, causeCode FROM BaseData b, EventCause e" +
-					" where imsi=" + imsi + " and b.eventCauseID=e.eventcauseCode;");
+			//rs = stmt.executeQuery("SELECT imsi, eventID, causeCode FROM BaseData b, EventCause e" +
+					//" where imsi=" + imsi + " and b.eventCauseID=e.eventcauseCode;");
 			//
 			
 			//
@@ -93,5 +94,7 @@ public class Query extends HttpServlet {
 			} catch (SQLException e) {}
 		}
 		out.close();
+	
 	}
+
 }
