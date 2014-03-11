@@ -24,7 +24,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 	public static ArrayList<Integer>invalidColumns=new ArrayList();
 
 	SimpleDateFormat sdf = new SimpleDateFormat("");
-	java.util.Date time = new java.util.Date();
+	static java.util.Date time = new java.util.Date();
 	java.sql.Date sqlDate = new java.sql.Date(time.getTime());
 
 	public BaseDataAndCellTableConfig() {

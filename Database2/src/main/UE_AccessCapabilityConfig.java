@@ -6,7 +6,7 @@ import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 
-public class UE_AccessCapabilityConfig extends SuperConfig2 {
+public class UE_AccessCapabilityConfig extends SuperConfig {
 
 	public UE_AccessCapabilityConfig() {
 		super();

@@ -51,7 +51,7 @@ public class Query extends HttpServlet {
 			//Database information
 			String database = "testdb";
 			String user = "root";
-			String password = "jessie01";
+			String password = "toor";
 
 			Class.forName("com.mysql.jdbc.Driver");
 

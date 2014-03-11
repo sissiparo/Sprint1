@@ -6,7 +6,7 @@ import jxl.Workbook;
 import persistence.PersistenceUtil;
 import entity.UEModel;
 
-public class UEModelConfig extends SuperConfig2 {
+public class UEModelConfig extends SuperConfig {
 
 	public UEModelConfig() {
 		super();

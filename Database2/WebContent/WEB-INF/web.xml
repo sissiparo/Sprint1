@@ -67,6 +67,16 @@
     <servlet-name>Query8</servlet-name>
     <url-pattern>/Query8</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FailureCauseQuery</display-name>
+    <servlet-name>FailureCauseQuery</servlet-name>
+    <servlet-class>servlet.FailureCauseQuery</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FailureCauseQuery</servlet-name>
+    <url-pattern>/FailureCauseQuery</url-pattern>
+  </servlet-mapping>
   
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

@@ -6,7 +6,7 @@ import jxl.Workbook;
 import persistence.PersistenceUtil;
 import entity.Manufacturer;
 
-public class ManufacturerConfig extends SuperConfig2 {
+public class ManufacturerConfig extends SuperConfig {
 
 	public ManufacturerConfig() {
 		super();

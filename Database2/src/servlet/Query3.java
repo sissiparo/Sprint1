@@ -58,7 +58,7 @@ public class Query3 extends HttpServlet {
 		out.print("</div>");
 		out.print("<img alt='header' src='images/logo.gif' id='header' width=100%  />"); 
 		out.print("<br><div style='text-align: left'>");
-		out.print("<a href='/Database/query3.html'>Back</a><br>");
+		out.print("<a href='/Database/query.html'>Back</a><br>");
 		out.print("<center><h1>Query results</h1></center>");
 		out.print("<br><br>");
 		if(!(startdate == null)){
@@ -79,7 +79,7 @@ public class Query3 extends HttpServlet {
 			//Database information
 			String database = "testdb";
 			String user = "root";
-			String password = "jessie01";
+			String password = "toor";
 
 
 			Class.forName("com.mysql.jdbc.Driver");

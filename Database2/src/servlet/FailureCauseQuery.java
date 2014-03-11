@@ -22,8 +22,7 @@ public class FailureCauseQuery extends HttpServlet {
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
 
 
-		String eventID = req.getParameter("EventID");
-		String causeCode = req.getParameter("CauseCode");
+		String failureClass = req.getParameter("FailureClassID");
 
 		res.setContentType("text/html");
 		PrintWriter out = res.getWriter();
@@ -34,7 +33,7 @@ public class FailureCauseQuery extends HttpServlet {
 		out.print("<a href='/Database/query.html'>Back</a><br>");
 		out.print("<center><h1>Query results</h1></center>");
 		out.print("<br><br>");
-		out.print("Event ID = "+eventID+" Cause Code = "+causeCode);
+		out.print("Failure Class = " + failureClass);
 		out.print("<br><br>");
 		out.print("<html><body><table align='center' border=\"1\" cellspacing=10 cellpadding=5>");
 		out.print("<th>IMSI</th>"); 
@@ -54,11 +53,8 @@ public class FailureCauseQuery extends HttpServlet {
 					("jdbc:mysql://localhost:3306/" + database,user,password);
 			stmt = con.createStatement();
 
-			rs = stmt.executeQuery("select imsi from basedata where eventCauseID IN (select eventcauseCode from eventcause where eventID = "+ Integer.parseInt(eventID)+" and causeCode ="+Integer.parseInt(causeCode)+") group by imsi;");
-			//
-			
-			//
-			// displaying records
+			rs = stmt.executeQuery("select imsi from basedata where failureClassID = "+ Integer.parseInt(failureClass)+" group by imsi;");
+
 			while(rs.next()){
 				out.print("<tr>");
 				out.print("<td>" + rs.getObject(1).toString() + "</td>");

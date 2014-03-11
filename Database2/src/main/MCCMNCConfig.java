@@ -6,7 +6,7 @@ import jxl.Workbook;
 import persistence.PersistenceUtil;
 import entity.MCCMNC;
 
-public class MCCMNCConfig extends SuperConfig2 {
+public class MCCMNCConfig extends SuperConfig {
 
 	public MCCMNCConfig() {
 		super();
