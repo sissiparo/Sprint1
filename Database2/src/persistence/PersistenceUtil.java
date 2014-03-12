@@ -196,4 +196,28 @@ public class PersistenceUtil implements Serializable {
 			return event.get(0);
 	}
 
+	
+	public static User findUserName(String userName) {
+		EntityManager em = emf.createEntityManager();
+		List<User> user = (List<User>) em.createNamedQuery("User.findUserName").setParameter("userName", userName).getResultList();
+		em.close();
+
+		if (user.size() == 0)
+			return null;
+		else
+			return user.get(0);
+	}
+	
+	public static Collection<BaseData> countAndDisplayFailuresByModel(String TAC, int eventCauseID){
+		EntityManager em = emf.createEntityManager();
+		List<BaseData> entry = (List<BaseData>) em.createNamedQuery("BaseData.countAndDisplayFailuresByModel").setParameter("TAC", TAC).setParameter("eventCauseID", eventCauseID).getResultList();
+		em.close();
+
+		if (entry.size() == 0)
+			return null;
+		else
+			return entry;
+	}
+}
+
 }
