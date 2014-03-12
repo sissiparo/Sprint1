@@ -77,6 +77,23 @@
     <servlet-name>FailureCauseQuery</servlet-name>
     <url-pattern>/FailureCauseQuery</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>UniqueCauseCodesQuery</servlet-name>
+    <servlet-class>servlet.UniqueCauseCodesQuery</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UniqueCauseCodesQuery</servlet-name>
+    <url-pattern>/UniqueCauseCodesQuery</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>CountFailuresQuery</servlet-name>
+    <servlet-class>servlet.CountFailuresQuery</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CountFailuresQuery</servlet-name>
+    <url-pattern>/CountFailuresQuery</url-pattern>
+  </servlet-mapping>
   
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

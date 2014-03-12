@@ -1,0 +1,68 @@
+<!Doctype html>
+<html>
+<head>
+<script language="javascript" type="text/javascript" src="datetimepicker.js">
+</script>
+</head>
+
+<body background="images/light.jpg" >
+<img alt="header" src="images/logo.gif" id="header" width=100%  /> 
+<form action="CountFailuresQuery" method="post">
+
+
+<p> For a given IMSI, view number of failures they have had during a given time period</p>
+
+<table width="700" cellspacing=0 border="0" cellpadding="0" align="center" summary="">
+	<tr>
+		<td>IMSI:</td>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<input type="text" name="IMSI">
+		</td>
+	</tr>
+	  <tr>
+	  	<td>
+	  		<div class="subtitle">Start Date</div>	
+
+	  	</td>
+	  </tr>
+	  <tr>
+	  	<td>
+	  		<input type="Text" name="startDate" id="startDate" maxlength="25" size="25" value ="2013-01-11"><a href="javascript:NewCal('startDate','ddmmmyyyy',true,24)"><img src="images/cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+	  		<span class="descriptions"> Select date..</span>
+	  	</td>
+	  </tr>
+	  <br>
+	  <tr>
+	  	<td>
+	  		<div class="subtitle">End Date</div>	
+
+	  	</td>
+	  </tr>
+
+
+	  <tr>
+	  	<td>
+	  		<input type="Text" name="endDate" id="endDate" maxlength="25" size="25" value="2014-03-12"><a href="javascript:NewCal('endDate','ddmmmyyyy',true,24)"><img src="images/cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+	  		<span class="descriptions"> Select date..</span>
+	  	</td>
+	  </tr>
+
+       
+</table>
+   <div style="text-align: center">
+      <input type="submit" value="Submit" align="center">
+   </div>
+   <br>
+   
+   		<div style="text-align: left">
+			<a href="/Database2/navigation.html">Back</a>
+			<br>
+			<a href="/Database2/index.html">Logout</a>
+		</div>
+</form>
+
+</body>
+</html>
