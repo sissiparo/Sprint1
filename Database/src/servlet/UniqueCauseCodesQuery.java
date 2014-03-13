@@ -42,8 +42,8 @@ public class UniqueCauseCodesQuery extends HttpServlet {
 		out.print("<center><h1>Query results</h1></center>");
 		out.print("<br><br>");
 		if(imsi.length()==15){
-			out.print("<br><br><br><a href='/Database2/uniqueCauseCodesQuery.html'>Back</a>&nbsp &nbsp");
-			out.print("<a href='/Database2/navigation.html'>Main</a><br><br><br>");
+			out.print("<br><br><br><a href='/Database/uniqueCauseCodesQuery.html'>Back</a>&nbsp &nbsp");
+			out.print("<a href='/Database/navigation.html'>Main</a><br><br><br>");
 			out.print("IMSI="+imsi);
 
 
