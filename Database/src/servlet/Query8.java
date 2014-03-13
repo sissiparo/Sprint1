@@ -23,7 +23,7 @@ public class Query8 extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 
-		String destination = "/query8.jsp";
+		String destination = "/Query8.jsp";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
 
 
@@ -44,7 +44,7 @@ public class Query8 extends HttpServlet {
 		out.print("</div>");
 		out.print("<img alt='header' src='images/logo.gif' id='header' width=100%  />"); 
 		out.print("<br><div style='text-align: left'>");
-		out.print("<a href='/Database/Query8.html'>Back</a><br>");
+		out.print("<a href='/Database/Query8.jsp'>Back</a><br>");
 		out.print("<center><h1>Query results</h1></center>");
 		out.print("<br><br>");
 		if(!(model==null)){
