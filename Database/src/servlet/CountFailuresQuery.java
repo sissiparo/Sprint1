@@ -19,6 +19,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+/**
+ * Servlet implementation class CountFailuresQuery
+ */
+@WebServlet("/CountFailuresQuery")
 public class CountFailuresQuery extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -57,6 +61,8 @@ public class CountFailuresQuery extends HttpServlet {
 		
 		if(imsi.length()==15){
 			out.print("<br><br>");
+			out.print("<a href='/Database/countFailuresQuery.html'>Back</a>&nbsp &nbsp");
+			out.print("<a href='/Database/navigation.html'>Main</a><br><br>");
 			if(!(startdate == null)){
 
 				out.print("<br><br>");
@@ -97,8 +103,6 @@ public class CountFailuresQuery extends HttpServlet {
 					}
 				}
 				out.print("<br><br><br>");
-				out.print("<a href='/Database/countFailuresQuery.html'>Back   </a><br>");
-				out.print("<a href='/Database/navigation.html'>   Main</a><br>");
 				out.print("</body></html>");
 			} catch (SQLException e) {
 				throw new ServletException("Servlet Could not display records.", e);
@@ -122,7 +126,7 @@ public class CountFailuresQuery extends HttpServlet {
 			}
 		}else{
 			out.print("<font color='red'>Invalid IMSI!</font>");
-			out.print("<br><br><a href='/Database/countFailuresQuery.html'>Back   </a><br>");
+			out.print("<br><br><a href='/Database/countFailuresQuery.html'>Back</a><br>");
 		}
 		out.close();
 	}
