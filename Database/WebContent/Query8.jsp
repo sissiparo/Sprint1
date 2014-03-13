@@ -83,8 +83,9 @@
    
    		<div style="text-align: left">
 			<a href="/Database/navigation.html">Back</a>
-			<br>
-			<a href="/Database/index.html">Logout</a>
+			<form action="/Database/LogoutServlet" method="post">
+			<input type="submit" value="Logout">
+		</form>
 		</div>
 </form>
 
