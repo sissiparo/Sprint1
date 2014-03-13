@@ -18,10 +18,7 @@ import java.sql.Statement;
 
 public class Query3 extends HttpServlet {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	
 
 	public void service(HttpServletRequest req,
 			HttpServletResponse res)
@@ -79,7 +76,7 @@ public class Query3 extends HttpServlet {
 			//Database information
 			String database = "testdb";
 			String user = "root";
-			String password = "toor";
+			String password = "jessie01";
 
 
 			Class.forName("com.mysql.jdbc.Driver");
