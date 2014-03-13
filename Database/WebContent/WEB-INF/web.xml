@@ -86,6 +86,14 @@
     <servlet-name>CountFailuresQuery</servlet-name>
     <url-pattern>/CountFailuresQuery</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Query9</servlet-name>
+    <servlet-class>servlet.Query9</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Query9</servlet-name>
+    <url-pattern>/Query9</url-pattern>
+  </servlet-mapping>
 
   
 
