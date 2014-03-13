@@ -81,14 +81,14 @@
    </div>
    <br>
    
-   		<div style="text-align: left">
+   		
+</form>
+<div style="text-align: left">
 			<a href="/Database/navigation.html">Back</a>
 			<form action="/Database/LogoutServlet" method="post">
 			<input type="submit" value="Logout">
 		</form>
 		</div>
-</form>
-
 
 </body>
 </html>
