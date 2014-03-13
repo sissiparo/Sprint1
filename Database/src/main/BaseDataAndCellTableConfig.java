@@ -88,7 +88,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 										Integer.parseInt(causeCode))
 								.getEventcauseCode();
 
-						int mccmncID = PersistenceUtil.findMCCMNCByName(
+						mccmncID = PersistenceUtil.findMCCMNCByName(
 								Integer.parseInt(mccID),
 								Integer.parseInt(mncID)).getMccmncID();
 
