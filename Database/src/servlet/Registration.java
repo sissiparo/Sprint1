@@ -98,7 +98,68 @@ public class Registration extends HttpServlet {
 			}
 			out.close();
 	}
-
+			/*
+			// connecting to database
+			Connection con = null;  
+			Statement stmt = null;
+			ResultSet rs = null;
+			try {
+				//Database information
+				String database = "testdb";
+				String user = "root";
+				String password = "toor";
+	
+				Class.forName("com.mysql.jdbc.Driver");
+	
+				con =DriverManager.getConnection 
+						("jdbc:mysql://localhost:3306/" + database,user,password);
+				stmt = con.createStatement();
+	
+				
+				
+				
+			//TODO this should be done in persistence
+			rs = stmt.executeQuery("SELECT imsi, eventID, causeCode FROM BaseData b, EventCause e" +
+					" where imsi=" + imsi + " and b.eventCauseID=e.eventcauseCode;");
+			
+			// displaying records
+			while(rs.next()){
+				out.print("<tr>");
+				out.print("<td>" + rs.getObject(2).toString() + "</td>");
+				out.print("<td>" + rs.getObject(3).toString() + "</td>");
+				out.print("</tr>");
+			}
+			
+		} 
+		
+		catch (SQLException e) {
+			throw new ServletException("Servlet Could not display records.", e);
+		}
+		
+		catch (ClassNotFoundException e) {
+			throw new ServletException("JDBC Driver not found.", e);
+		} 
+		
+		
+		//close everything
+		finally {
+			try {
+				if(rs != null) {
+					rs.close();
+					rs = null;
+				}
+				if(stmt != null) {
+					stmt.close();
+					stmt = null;
+				}
+				if(con != null) {
+					con.close();
+					con = null;
+				}
+			}
+			
+			catch (SQLException e) {}
+	*/	
 	private void saveUserDetails(User user) {
 		PersistenceUtil.persist(user);
 		
