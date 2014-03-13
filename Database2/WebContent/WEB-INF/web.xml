@@ -21,6 +21,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>Query12</display-name>
+    <servlet-name>Query12</servlet-name>
+    <servlet-class>servlet.Query12</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Query12</servlet-name>
+    <url-pattern>/Query12</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>Query3</display-name>
     <servlet-name>Query3</servlet-name>
     <servlet-class>servlet.Query3</servlet-class>
