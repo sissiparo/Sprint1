@@ -19,7 +19,9 @@
     <servlet-name>Query</servlet-name>
     <url-pattern>/Query</url-pattern>
   </servlet-mapping>
-  <servlet>
+  
+
+<servlet>
     <description></description>
     <display-name>Query3</display-name>
     <servlet-name>Query3</servlet-name>
@@ -29,6 +31,32 @@
     <servlet-name>Query3</servlet-name>
     <url-pattern>/Query3</url-pattern>
   </servlet-mapping>
+
+<servlet>
+    <description></description>
+    <display-name>Query11</display-name>
+    <servlet-name>Query11</servlet-name>
+    <servlet-class>servlet.Query11</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Query11</servlet-name>
+    <url-pattern>/Query11</url-pattern>
+  </servlet-mapping>
+
+
+<servlet>
+    <description></description>
+    <display-name>Query12</display-name>
+    <servlet-name>Query12</servlet-name>
+    <servlet-class>servlet.Query12</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Query12</servlet-name>
+    <url-pattern>/Query12</url-pattern>
+  </servlet-mapping>
+
+
+
   <servlet>
     <description></description>
     <display-name>Upload</display-name>
