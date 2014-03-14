@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta charset="US-ASCII">
+<title>Registration Page</title>
+</head>
+<script>
+	function validate() {
+		var x = document.forms["myForm"]["user"].value;
+		var y = document.forms["myForm"]["pwd"].value;
+		var z = document.forms["myForm"]["pwd2"].value;
+		if (x == null || x == "" || y == null || y == "") {
+			alert("All fields must be filled out");
+			return false;
+		}
+
+		if (y != z) {
+			alert("Passwords must match");
+			return false;
+		}
+
+	}
+</script>
+<body>
+
+	<form name="myForm" class="style.css" action="RegistrationServlet"
+		onsubmit="return validate();" method="post">
+		<h1>Registration Form</h1>
+		<label><b>Username:</b></label> <br> <input type="text"
+			name="user"> <br> <label><b>Password:</b></label> <br>
+		<input type="password" name="pwd"> <br> <label><b>Re-enter
+				Password:</b></label> <br> <input type="password" name="pwd2"> <br>
+		<input type="submit" value="Register">
+	</form>
+
+	<form action="/ServletCookieExample/login.html">
+		<input type="submit" value="Go to Login">
+	</form>
+
+</body>
+</html>

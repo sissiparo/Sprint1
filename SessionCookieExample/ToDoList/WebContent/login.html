@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta charset="US-ASCII">
+<title>Login Page</title>
+</head>
+
+<script>
+	function validate() {
+		var x = document.forms["loginForm"]["user"].value;
+		var y = document.forms["loginForm"]["pwd"].value;
+
+		if (x == null || x == "" || y == null || y == "") {
+			alert("All fields must be filled out");
+			return false;
+		}
+
+	}
+</script>
+
+<body>
+	<form name="loginForm" action="LoginServlet"
+		onsubmit="return validate();" method="post">
+		<h1>Login Form</h1>
+		<label><b>Username:</b></label><br> <input type="text"
+			name="user"> <br> <label><b>Password:</b></label><br>
+		<input type="password" name="pwd"> <br> <input
+			type="submit" value="Login">
+
+	</form>
+
+	<form action="/ServletCookieExample/register.html">
+		<input type="submit" value="Go to Registration">
+	</form>
+
+</body>
+</html>
