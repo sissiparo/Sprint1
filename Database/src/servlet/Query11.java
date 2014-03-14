@@ -26,21 +26,9 @@ public class Query11 extends HttpServlet {
 		String destination = "/Query11.html";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
 
-		// Takes the date from the form in String and converts it java.util.date which is how the buisness object is written
-
 
 		String startdate=req.getParameter("startDate");
-
-		//System.out.println(startdate);
-
-
-
-		String enddate=req.getParameter("endDate");// = new SimpleDateFormat("yyyy-MM-dd").format(, enddate, new FieldPosition(0));
-
-
-		// Takes date from java.util.date and converts it to java.sql.date
-		// java.sql.Date mySqlDate = new java.sql.Date(startdate.getTime());
-		//java.sql.Date mySqlDate1 = new java.sql.Date(endDate.getTime());
+		String enddate=req.getParameter("endDate");
 
 		res.setContentType("text/html");
 		PrintWriter out = res.getWriter();
@@ -51,6 +39,7 @@ public class Query11 extends HttpServlet {
 		out.print("<a href='/Database/Query11.html'>Back</a><br>");
 		out.print("<center><h1>Query results</h1></center>");
 		out.print("<br><br>");
+
 		if(!(startdate == null)){
 			out.print("<strong>Top Ten most frequent IMSI/Market/Operator Combinations<br>between "+startdate+ " and "+enddate+":</strong>");
 			out.print("<br><br>");
@@ -71,7 +60,7 @@ public class Query11 extends HttpServlet {
 			//Database information
 			String database = "testdb";
 			String user = "root";
-			String password = "jessie01";
+			String password = "toor";
 
 
 			Class.forName("com.mysql.jdbc.Driver");
@@ -80,7 +69,7 @@ public class Query11 extends HttpServlet {
 					("jdbc:mysql://localhost:3306/" + database,user,password);
 			stmt = con.createStatement();
 
-			String query = "select `Country`.countryName as Market, `MCCMNC`.`operator` as Operator,"
+			/*String query = "select `Country`.countryName as Market, `MCCMNC`.`operator` as Operator,"
 					+" filteredBD.cellID as \"Cell ID\", count(*) as \"Count\" from" 
 					+" `MCCMNC`,"
 					+" `Country`,"
@@ -90,20 +79,37 @@ public class Query11 extends HttpServlet {
 					+" AND `Country`.`mcc`= `MCCMNC`.`mcc`"
 					+" group by Market, Operator, \"Cell ID\""
 					+" order by Count DESC"
+					+" limit 10;";*/
+
+
+
+			String query = "select `Country`.countryName as Market, `MCCMNC`.`operator` as Operator,"
+					+ "tiny.cellID as CellID, tiny.Count as Count"
+					+" from"
+					+" `MCCMNC`,"
+					+" `Country`,"
+					+"(select baseDate, MCCMNCID, cellID, count(*) as Count from BaseData"
+					+" where baseDate between '"+startdate+"' and '"+enddate+"'"
+					+" group by IMSI, MCCMNCID, cellID) tiny"
+					+" where tiny.MCCMNCID=`MCCMNC`.`mccmncID`"
+					+" AND `Country`.`mcc`= `MCCMNC`.`mcc`"
+					+" order by Count DESC"
 					+" limit 10;";
 
-			System.out.println(query);
+					System.out.println(query);
 			rs = stmt.executeQuery(query);
 
 
 			// displaying records
-			while(rs.next()){
-				out.print("<tr>");
-				out.print("<td>" + rs.getObject(1).toString() + "</td>");
-				out.print("<td>" + rs.getObject(2).toString() + "</td>");
-				out.print("<td>" + rs.getObject(3).toString() + "</td>");
-				out.print("<td>" + rs.getObject(4).toString() + "</td>");
-				out.print("</tr>");
+			if (rs.next()){
+				do {
+					out.print("<tr>");
+					out.print("<td>" + rs.getObject(1).toString() + "</td>");
+					out.print("<td>" + rs.getObject(2).toString() + "</td>");
+					out.print("<td>" + rs.getObject(3).toString() + "</td>");
+					out.print("<td>" + rs.getObject(4).toString() + "</td>");
+					out.print("</tr>");
+				}while(rs.next());
 			}
 			out.print("</table></body></html>");
 		} catch (SQLException e) {
