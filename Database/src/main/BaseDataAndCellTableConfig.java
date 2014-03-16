@@ -129,7 +129,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 
 	}
 
-	public boolean checkRowIsValid(String [] rowOfCells){
+	public static boolean checkRowIsValid(String [] rowOfCells){
 		
 		if(checkDateFormat(rowOfCells[0])){
 			if (checkEventIdAndCauseCode(rowOfCells[1], rowOfCells[8])){
@@ -158,17 +158,16 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 	
 
 	public static boolean checkHIERIDs(String HIERID3, String HIERID32, String HIERID321) {
-		
-		if((HIERID3.matches("[0-9]+")||HIERID3.matches("[0-9]+")||HIERID3.matches("[0-9]+"))){
+		if(((HIERID3.matches("[0-9]+") && HIERID3.length()==19)&&(HIERID32.matches("[0-9]+")&& HIERID32.length()==19)&&(HIERID321.matches("[0-9]+")&& HIERID321.length()==19))){
 			return true;
 		}
-		if (!HIERID3.matches("[0-9]+")){
+		if (!HIERID3.matches("[0-9]+") || HIERID3.length()!=19){
 			invalidColumns.add(11);
 		}
-		if (!HIERID3.matches("[0-9]+")){
+		if (!HIERID32.matches("[0-9]+") || HIERID32.length()!=19){
 			invalidColumns.add(12);
 		}
-		if (!HIERID3.matches("[0-9]+")){
+		if (!HIERID321.matches("[0-9]+") || HIERID321.length()!=19){
 			invalidColumns.add(13);
 		}
 		System.out.println("Broke at checkHIERIDs: "+HIERID3+" "+HIERID32+" "+HIERID321);
@@ -298,11 +297,11 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 	}
 	
 	
-	public void storeRowError(String[] rowRemoved){
+	public static void storeRowError(String[] rowRemoved){
 		
 		PrintWriter pw;
 		try{
-			pw=new PrintWriter(new FileWriter("C:/Users/c09409661/Desktop/ProjectWS/errorLog.csv",true));
+			pw=new PrintWriter(new FileWriter("C:/Users/Mobile/Desktop/Workspace/WS6/errorLog.csv",true));
 			for (int i=0; i<rowRemoved.length; i++){
 				pw.write(rowRemoved[i]+", ");
 			}
