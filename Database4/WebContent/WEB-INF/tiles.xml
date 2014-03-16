@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="baseLayout" template="/layouts/baseLayout.jsp">
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="header" value="/templates/header.jsp" />
+		<put-attribute name="menu" value="/templates/menu.jsp" />
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>
+
+	<definition name="home" extends="baseLayout">
+		<put-attribute name="title" value="Home Page" />
+		<put-attribute name="body" value="/pages/home.jsp" />
+	</definition>
+	
+	<definition name="queries" extends="baseLayout">
+		<put-attribute name="title" value="Queries" />
+		<put-attribute name="body" value="/pages/queries.jsp" />
+	</definition>
+	
+	<definition name="queries2" extends="baseLayout">
+		<put-attribute name="title" value="Queries2" />
+		<put-attribute name="body" value="/pages/queries2.jsp" />
+	</definition>
+	
+		<definition name="queries3" extends="baseLayout">
+		<put-attribute name="title" value="Queries3" />
+		<put-attribute name="body" value="/pages/queries3.jsp" />
+	</definition>
+	
+		<definition name="queries4" extends="baseLayout">
+		<put-attribute name="title" value="Queries4" />
+		<put-attribute name="body" value="/pages/queries4.jsp" />
+	</definition>
+
+</tiles-definitions>

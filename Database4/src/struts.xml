@@ -1,0 +1,20 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="default" extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<action name="*Page" method="{1}" class="tiles.TilesAction">
+			<result name="home" type="tiles">home</result>
+			<result name="queries" type="tiles">queries</result>
+			<result name="queries2" type="tiles">queries2</result>
+			<result name="queries3" type="tiles">queries3</result>
+			<result name="queries4" type="tiles">queries4</result>
+			<result name="userStory4" type="tiles">userStory4</result>			
+		</action>
+	</package>
+</struts>
