@@ -31,7 +31,7 @@
 				</fieldset> <br>
 				<div style="text-align: left">
 					<a href="/Database/test/queriesPage.action">Back</a>
-					<form action="LogoutServlet" method="post">
+					<form action="/Database/LogoutServlet" method="post">
 						<input type="submit" value="Logout">
 					</form>
 				</div>
