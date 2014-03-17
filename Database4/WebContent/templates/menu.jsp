@@ -1,4 +1,4 @@
-<!-- Group6- Ger Hennessy, Ian Murray, Paula Suciu, Muireann Walsh, Ronan Monahan, Fregal Byrne -->
+<!-- Group5- Ger Hennessy, Ian Murray, Paula Suciu, Muireann Walsh, Ronan Monahan, Fregal Byrne -->
 <%@taglib uri="/struts-tags" prefix="s"%>
 <body>
 <table bgcolor="#00b7ea">
