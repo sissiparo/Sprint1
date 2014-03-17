@@ -29,8 +29,18 @@ public class Login extends HttpServlet
         String pass=request.getParameter("userPassword");
         
         List<User> rs = PersistenceUtil.findAllUsers();
-		
-			if(Validate.checkUser(user, pass).equals("System Administrator")){
+			
+        
+        if(PersistenceUtil.findUserName(user)==null){
+        	
+        	User user1 = new User("admin", "admin", "EMP001", "Johnny", "Adminton", "System Administrator");
+    		PersistenceUtil.persist(user1);
+        	
+    		
+	}
+        
+        
+        if(Validate.checkUser(user, pass).equals("System Administrator")){
 				    Cookie loginCookie = new Cookie("SysAdmin", user);
 				    loginCookie.setMaxAge(30 * 60);
 				    response.addCookie(loginCookie);

@@ -11,8 +11,7 @@ public class UserConfig extends SuperConfig {
 	}
 
 	public void initialise() {
-		User user1 = new User("admin", "admin", "EMP001", "Johnny", "Adminton", "System Administrator");
-		PersistenceUtil.persist(user1);
+		
 		User user2 = new User("netman", "netman", "EMP002", "Bon", "Scott", "Network Management Engineer");
 		PersistenceUtil.persist(user2);
 		User user3 = new User("supeng", "supeng", "EMP003", "Angus", "Young", "Support Engineer");
