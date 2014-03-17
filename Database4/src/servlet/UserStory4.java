@@ -29,11 +29,11 @@ public class UserStory4 extends HttpServlet {
 		out.print("<body>");
 		out.print("</div>"); 
 		out.print("<br><div style='text-align: left'>");
-		out.print("<a href='/Database/queries/userStory4.html'>Back</a><br>");
 		out.print("<center><h1>Query results</h1></center>");
 		out.print("<br><br>");
+		out.print("&nbsp;&nbsp; <a href='/Database4/queries/userStory4.html'>Back</a><br><br><br>");
 		if(imsi.length()==15){
-		out.print("IMSI="+imsi);
+		out.print(" &nbsp;&nbsp;IMSI="+imsi);
 		out.print("<br><br>");
 		out.print("<html><body><table align='center' border=\"1\" cellspacing=10 cellpadding=5>");
 		out.print("<th>Event ID</th>"); 

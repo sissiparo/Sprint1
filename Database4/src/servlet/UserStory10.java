@@ -57,6 +57,8 @@ public class UserStory10 extends HttpServlet {
 		
 		if(TAC.length()<12){
 			
+			out.print("<br><br>&nbsp;&nbsp;<a href='/Database4/queries/userStory10.html'>Back</a>"
+					+ " &nbsp;&nbsp;<a href='/Database4/test/queriesPage.action'>Main</a> <br><br> ");
 			// connecting to database
 			Connection con = null;  
 			Statement stmt = null;

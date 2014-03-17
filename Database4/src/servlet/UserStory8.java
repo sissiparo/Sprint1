@@ -42,11 +42,12 @@ public class UserStory8 extends HttpServlet {
 		PrintWriter out = res.getWriter();
 		out.print("<body>");
 		out.print("<br><div style='text-align: left'>");
-		out.print("<a href='/Database/queries/userStory8.jsp'>Back</a><br>");
 		out.print("<center><h1>Query results</h1></center>");
 		out.print("<br><br>");
+		out.print(" &nbsp;&nbsp;<a href='/Database4/queries/userStory8.jsp'>Back</a>"
+				+ " &nbsp;&nbsp;<a href='/Database4/test/queriesPage.action'>Main</a> <br><br> ");
 		if(!(model==null)){
-			out.print("<strong>Number of failures for selected model<br>between "+startdate+ " and "+enddate+"</strong>");
+			out.print("&nbsp;&nbsp;<strong>Number of failures for selected model<br>&nbsp;&nbsp;between "+startdate+ " and "+enddate+"</strong>");
 			out.print("<br><br>");
 			out.print("<html><body><table align='center' border=\"1\" cellspacing=10 cellpadding=5>");
 			out.print("<th>Model</th>"); 

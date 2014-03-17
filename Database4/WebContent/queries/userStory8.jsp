@@ -1,4 +1,4 @@
-<!-- Group5- Ger Hennessy, Ian Murray, Paula Suciu, Muireann Walsh, Ronan Monahan, Fregal Byrne -->
+<!-- Group5- Ger Hennessy, Ian Murray, Paula Suciu, Muireann Walsh, Ronan Monahan, Fergal Byrne -->
 <!Doctype html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -32,7 +32,7 @@
 						try {
 							String database = "testdb";
 							String user = "root";
-							String password = "jessie01";
+							String password = "toor";
 
 							Class.forName("com.mysql.jdbc.Driver");
 
@@ -109,7 +109,7 @@
 
 				</form>
 				<div style="text-align: left">
-					<a href="/Database/test/queriesPage.action" />Back</a>
+					&nbsp;&nbsp;<a href="/Database/test/queriesPage.action" />Back</a>
 					<form action="/Database/LogoutServlet" method="post">
 						<input type="submit" value="Logout">
 					</form>
@@ -118,8 +118,8 @@
 		</tr>
 		<tr ALIGN="CENTER">
 			<td height=40px>
-				<div align="center">Group6- Ger Hennessy, Ian Murray, Paula
-					Suciu, Muireann Walsh, Ronan Monahan, Fregal Byrne</div>
+				<div align="center">Group5- Ger Hennessy, Ian Murray, Paula
+					Suciu, Muireann Walsh, Ronan Monahan, Fergal Byrne</div>
 			</td>
 		</tr>
 	</table>

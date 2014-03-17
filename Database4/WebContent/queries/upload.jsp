@@ -1,4 +1,4 @@
-<!-- Group5- Ger Hennessy, Ian Murray, Paula Suciu, Muireann Walsh, Ronan Monahan, Fregal Byrne -->
+<!-- Group5- Ger Hennessy, Ian Murray, Paula Suciu, Muireann Walsh, Ronan Monahan, Fergal Byrne -->
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <html>
 <head>
@@ -30,7 +30,7 @@
 					</form>
 				</fieldset> <br>
 				<div style="text-align: left">
-					<a href="/Database/test/queriesPage.action">Back</a>
+					&nbsp;&nbsp;<a href="/Database/test/queriesPage.action">Back</a>
 					<form action="LogoutServlet" method="post">
 						<input type="submit" value="Logout">
 					</form>
@@ -39,8 +39,8 @@
 		</tr>
 		<tr ALIGN="CENTER">
 			<td height=40px>
-				<div align="center">Group6- Ger Hennessy, Ian Murray, Paula
-					Suciu, Muireann Walsh, Ronan Monahan, Fregal Byrne</div>
+				<div align="center">Group5- Ger Hennessy, Ian Murray, Paula
+					Suciu, Muireann Walsh, Ronan Monahan, Fergal Byrne</div>
 			</td>
 		</tr>
 	</table>

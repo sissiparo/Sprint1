@@ -34,12 +34,13 @@ public class UserStory11 extends HttpServlet {
 		PrintWriter out = res.getWriter();
 		out.print("<body>");
 		out.print("<br><div style='text-align: left'>");
-		out.print("<a href='/Database/queries/userStory11.html'>Back</a><br>");
 		out.print("<center><h1>Query results</h1></center>");
 		out.print("<br><br>");
+		out.print("&nbsp;&nbsp;<a href='/Database4/queries/userStory11.html'>Back</a>"
+				+ " &nbsp;&nbsp;<a href='/Database4/test/queriesPage.action'>Main</a> <br><br> ");
 
 		if(!(startdate == null)){
-			out.print("<strong>Top Ten most frequent IMSI/Market/Operator Combinations<br>between "+startdate+ " and "+enddate+":</strong>");
+			out.print("<strong>&nbsp;&nbsp;Top Ten most frequent IMSI/Market/Operator Combinations<br>&nbsp;&nbsp;between "+startdate+ " and "+enddate+":</strong>");
 			out.print("<br><br>");
 			out.print("<html><body><table align='center' border=\"1\" cellspacing=10 cellpadding=5>");
 			out.print("<th>Market</th>"); 

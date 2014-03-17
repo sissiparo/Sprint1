@@ -36,12 +36,12 @@ public class UserStory6 extends HttpServlet {
 		PrintWriter out = res.getWriter();
 		out.print("<body>");
 		out.print("<br><div style='text-align: left' >");
-
 		out.print("<center><h1>Query results</h1></center>");
 		out.print("<br><br>");
 		if(imsi.length()==15){
-			out.print("<br><br><br><a href='/Database/queries/userStory6.html'>Back</a>&nbsp&nbsp");
-			out.print("IMSI="+imsi);
+			out.print("<br><br><br>&nbsp;&nbsp;<a href='/Database4/queries/userStory6.html'>Back</a>"
+					+ " &nbsp;&nbsp;<a href='/Database4/test/queriesPage.action'>Main</a> <br><br> ");
+			out.print("&nbsp;&nbsp;IMSI="+imsi);
 
 
 			// connecting to database

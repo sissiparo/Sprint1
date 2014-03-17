@@ -69,8 +69,9 @@ public class UserStory9 extends HttpServlet {
 
 		if(!(startdate == "")){
 	
-			out.print("<br><br><a href='/Database/queries/userStory9.html'>Back</a> &nbsp &nbsp   ");
-			out.print("From <strong>"+startdate+ "</strong> to <strong>"+enddate+"</strong>");
+			out.print("<br><br>&nbsp;&nbsp;<a href='/Database4/queries/userStory9.html'>Back</a>"
+					+ " &nbsp;&nbsp;<a href='/Database4/test/queriesPage.action'>Main</a> <br><br> ");
+			out.print("&nbsp;&nbsp; From <strong>"+startdate+ "</strong> to <strong>"+enddate+"</strong>");
 
 
 

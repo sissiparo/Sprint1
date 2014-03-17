@@ -28,10 +28,11 @@ public class UserStory14 extends HttpServlet {
 		PrintWriter out = res.getWriter();
 		out.print("<body>");
 		out.print("<br><div style='text-align: left'>");
-		out.print("<a href='/Database/queries/userStory14.html'>Back</a><br>");
 		out.print("<center><h1>Query results</h1></center>");
 		out.print("<br><br>");
-		out.print("Failure Class = " + failureClass);
+		out.print("&nbsp;&nbsp;<a href='/Database4/queries/userStory14.html'>Back</a>"
+				+ " &nbsp;&nbsp;<a href='/Database4/test/queriesPage.action'>Main</a> <br><br> ");
+		out.print("&nbsp;&nbsp;Failure Class = " + failureClass);
 		out.print("<br><br>");
 		out.print("<html><body><table align='center' border=\"1\" cellspacing=10 cellpadding=5>");
 		out.print("<th>IMSI</th>"); 
