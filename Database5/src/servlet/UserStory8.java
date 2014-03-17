@@ -74,7 +74,7 @@ public class UserStory8 extends HttpServlet {
 			//ToDo query
 			String quer = "select filtered.TAC as TAC, count(filtered.TAC)";
 			quer+="as \"# of failures between X and Y\" from ";
-			quer+="(select * from BaseData where baseDate between \'";
+			quer+="(select * from BaseData where TAC=\'"+model +" \'and baseDate between \'";
 			quer+=startdate+"\' and \'"+enddate+"\') as filtered group by TAC;";
 			System.out.println(quer);
 			rs = stmt.executeQuery(quer);
