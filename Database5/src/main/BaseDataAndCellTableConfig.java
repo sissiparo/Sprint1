@@ -157,41 +157,40 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 
 	
 
-	public static boolean checkHIERIDs(String HIERID3, String HIERID32, String HIERID321) {
-		if(((HIERID3.matches("[0-9]+") && (HIERID3.length()>15 && HIERID3.length()<=19))&&(HIERID32.matches("[0-9]+")&& (HIERID32.length()>15 && HIERID32.length()<=19))&&(HIERID321.matches("[0-9]+")&& (HIERID321.length()>15 && HIERID321.length()<=19)))){
-			return true;
+	public static boolean checkHIERIDs(String HIERID3, String HIERID32, String HIERID321){
+		
+		if(HIERID3.length()<=19||HIERID32.length()<=19||HIERID321.length()<=19){
+			if (checkForDigits(HIERID3)&&checkForDigits(HIERID32)&&checkForDigits(HIERID321)){
+				return true;
+			}
 		}
-		if (!HIERID3.matches("[0-9]+") || (HIERID3.length()!=19 && HIERID3.length()!=18)){
-			invalidColumns.add(11);
-		}
-		if (!HIERID32.matches("[0-9]+") || (HIERID32.length()!=19 && HIERID32.length()!=18)){
-			invalidColumns.add(12);
-		}
-		if (!HIERID321.matches("[0-9]+") || (HIERID32.length()!=19 && HIERID32.length()!=18)){
-			invalidColumns.add(13);
-		}
-		System.out.println("Broke at checkHIERIDs: "+HIERID3+" "+HIERID32+" "+HIERID321);
 		return false;
+	}
+	
+	public static boolean checkForDigits(String word){
+		for (int i=0; i<word.length(); i++){
+			if(!Character.isDigit(word.charAt(i))){
+				return false;
+			}
+		}
+		return true;
 	}
 
 	public static boolean checkIMSI(String imsiColumnValue) {
-		if(imsiColumnValue.length()==15 && imsiColumnValue.matches("[0-9]+")){
+		if(imsiColumnValue.length()<=15 && checkForDigits(imsiColumnValue)){
 			return true;
 		}
 		System.out.println("Broke at IMSI: "+imsiColumnValue);
-		invalidColumns.add(10);
 		return false;
 	}
 
 	public static boolean checkCellIdAndDuration(String cellIdColumnValue, String durationColumnValue) {
 	
-		if (!cellIdColumnValue.matches("[0-9]+")){
-			invalidColumns.add(6);
+		if (!checkForDigits(cellIdColumnValue)){
 			System.out.println("Broke at CellID: "+cellIdColumnValue);
 			return false;
 		}
-		if (!durationColumnValue.matches("[0-9]+")){
-			invalidColumns.add(7);
+		if (!checkForDigits(durationColumnValue)){
 			System.out.println("Broke at durationColumnValue: "+durationColumnValue);
 			return false;
 		}
@@ -200,16 +199,9 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 
 	public static boolean checkMCCAndMNC(String mccColumnValue, String mncColumnValue) {
 		
-		if(PersistenceUtil.findCountry(Integer.parseInt(mccColumnValue))==null){
-			invalidColumns.add(4);
-		}
-		
 		if(PersistenceUtil.findMCCMNCByName(Integer.parseInt(mccColumnValue),Integer.parseInt(mncColumnValue))!=null){
 			return true;
-		}else{
-			invalidColumns.add(5);
 		}
-		
 		System.out.println("Broke at MCC-MNC: "+mccColumnValue+" "+mncColumnValue);
 		return false;
 	}
@@ -219,7 +211,6 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		if(PersistenceUtil.findTAC(tacColumnValue)!=null){
 			return true;
 		}else{
-			invalidColumns.add(3);
 			System.out.println("Broke at TAC: "+tacColumnValue);
 			return false;
 		}		
@@ -234,7 +225,6 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 				return true;
 				
 			}else{
-				invalidColumns.add(2);
 				System.out.println("Broke at Failure Class: "+ failureClassColumnValue);
 				return false;
 			}
@@ -246,36 +236,16 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 
 	public static boolean checkEventIdAndCauseCode(String eventIdColumnValue, String causeCodeColumnValue) {
 		
-		try{
+		if(checkForDigits(eventIdColumnValue)&&checkForDigits(causeCodeColumnValue)){
 			int eventIdAsInt=Integer.parseInt(eventIdColumnValue);
 			int causeCodeAsInt=Integer.parseInt(causeCodeColumnValue);
 			
-			if(PersistenceUtil.findEventID(eventIdAsInt)==null){
-			
-				invalidColumns.add(1);
-			}
-			else{
-			
-			}
-			
-			
-			if(PersistenceUtil.findEventIDAndCauseCode(eventIdAsInt,causeCodeAsInt)!=null){
-				
+			if(PersistenceUtil.findEventIDAndCauseCode(eventIdAsInt,causeCodeAsInt)!=null){	
 				return true;
-				
-			}else{
-				invalidColumns.add(8);
-				return false;
 			}
 		}
-		catch(NumberFormatException e){
-			if(!eventIdColumnValue.matches("[0-9]+")){
-				invalidColumns.add(1);
-			}else{
-				invalidColumns.add(8);
-			}
-			return false;
-		}
+		System.out.println("Broke at EventCauseID Class: "+ eventIdColumnValue+" "+causeCodeColumnValue);
+		return false;
 	}
 		
 	
@@ -301,7 +271,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 		
 		PrintWriter pw;
 		try{
-			pw=new PrintWriter(new FileWriter("C:/Users/Mobile/Desktop/Workspace/WS10/errorLog.csv",true));
+			pw=new PrintWriter(new FileWriter("C:/Users/ronan_monahan/workspace/Database/errorLog.csv",true));
 			for (int i=0; i<rowRemoved.length; i++){
 				pw.write(rowRemoved[i]+", ");
 			}
