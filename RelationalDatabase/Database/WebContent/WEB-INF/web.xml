@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Database</display-name>
+
+	<context-param>
+		<param-name>
+			org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+		<param-value>/WEB-INF/tiles.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+	</listener>
+
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/test/*</url-pattern>
+	</filter-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<description></description>
+		<display-name>Login</display-name>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>servlet.Login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<description></description>
+		<display-name>LogoutServlet</display-name>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/LogoutServlet</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<description></description>
+		<display-name>Upload</display-name>
+		<servlet-name>Upload</servlet-name>
+		<servlet-class>servlet.Upload</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Upload</servlet-name>
+		<url-pattern>/queries/Upload</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Registration</servlet-name>
+		<servlet-class>servlet.Registration</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Registration</servlet-name>
+		<url-pattern>/queries/Registration</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>UserStory4</display-name>
+		<servlet-name>UserStory4</servlet-name>
+		<servlet-class>servlet.UserStory4</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserStory4</servlet-name>
+		<url-pattern>/queries/UserStory4</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>UserStory5</servlet-name>
+		<servlet-class>servlet.UserStory5</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserStory5</servlet-name>
+		<url-pattern>/queries/UserStory5</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserStory6</servlet-name>
+		<servlet-class>servlet.UserStory6</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserStory6</servlet-name>
+		<url-pattern>/queries/UserStory6</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>UserStory7</display-name>
+		<servlet-name>UserStory7</servlet-name>
+		<servlet-class>servlet.UserStory7</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserStory7</servlet-name>
+		<url-pattern>/queries/UserStory7</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>UserStory8</display-name>
+		<servlet-name>UserStory8</servlet-name>
+		<servlet-class>servlet.UserStory8</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserStory8</servlet-name>
+		<url-pattern>/queries/UserStory8</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UserStory9</servlet-name>
+		<servlet-class>servlet.UserStory9</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserStory9</servlet-name>
+		<url-pattern>/queries/UserStory9</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserStory10</servlet-name>
+		<servlet-class>servlet.UserStory10</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserStory10</servlet-name>
+		<url-pattern>/queries/UserStory10</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>UserStory11</display-name>
+		<servlet-name>UserStory11</servlet-name>
+		<servlet-class>servlet.UserStory11</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserStory11</servlet-name>
+		<url-pattern>/queries/UserStory11</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<description></description>
+		<display-name>UserStory12</display-name>
+		<servlet-name>UserStory12</servlet-name>
+		<servlet-class>servlet.UserStory12</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserStory12</servlet-name>
+		<url-pattern>/queries/UserStory12</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>UserStory14</display-name>
+		<servlet-name>UserStory14</servlet-name>
+		<servlet-class>servlet.UserStory14</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserStory14</servlet-name>
+		<url-pattern>/queries/UserStory14</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>
