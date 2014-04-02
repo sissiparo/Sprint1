@@ -338,6 +338,12 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 	
 	public void storeData(){
 		
+		
+		if(PersistenceUtil.findByCellID(Integer.parseInt(cellID))==null){
+			cellTable = new CellTable(
+					Integer.parseInt(cellID), hier3_ID,
+					hier32_ID, hier321_ID);
+			PersistenceUtil.persist(cellTable);}
 		getObjects();
 		
 		try {
@@ -356,11 +362,7 @@ public class BaseDataAndCellTableConfig extends SuperConfig {
 			System.out.println("Check has been performed already so should not throw");
 			e.printStackTrace();
 		}
-		if(PersistenceUtil.findByCellID(Integer.parseInt(cellID))==null){
-		cellTable = new CellTable(
-				Integer.parseInt(cellID), hier3_ID,
-				hier32_ID, hier321_ID);
-		PersistenceUtil.persist(cellTable);}
+		
 	}
 
 }
