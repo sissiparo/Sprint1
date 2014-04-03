@@ -1,0 +1,80 @@
+<!-- Group5- Ger Hennessy, Ian Murray, Paula Suciu, Muireann Walsh, Ronan Monahan, Fergal Byrne -->
+<!Doctype html>
+<html>
+<head>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" charset=utf-8" src="script.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" charset=utf-8"></script>
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+<!--  
+<script language="javascript" type="text/javascript"
+	src="datetimepicker.js">
+	
+</script>
+-->
+</head>
+
+<body id='body5'>
+
+
+
+
+		<p>For a given IMSI, view number of failures they have had during
+			a given time period</p>
+
+		<table width="700" cellspacing=0 border="0" cellpadding="0"
+			align="center" summary="">
+			<tr>
+				<td>IMSI:</td>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="imsi5"></td>
+			</tr>
+			<tr>
+				<td>
+					<div>Start Date</div>
+
+				</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="startDate5" id="startDate5"
+					maxlength="25" size="25" value="2013-02-19"><a
+					href="javascript:NewCal('startDate','ddmmmyyyy',true,24)"><img
+						src="images/cal.gif" width="16" height="16" border="0"
+						alt="Pick a date"></a> <span class="descriptions"> Select
+						date..</span></td>
+			</tr>
+			<br>
+			<tr>
+				<td>
+					<div class="subtitle">End Date</div>
+
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><input type="Text" name="endDate5" id="endDate5"
+					maxlength="25" size="25" value="2013-02-22"><a
+					href="javascript:NewCal('endDate','ddmmmyyyy',true,24)"><img
+						src="images/cal.gif" width="16" height="16" border="0"
+						alt="Pick a date"></a> <span class="descriptions"> Select
+						date..</span></td>
+			</tr>
+
+
+		</table>
+		<div style="text-align: center">
+			<input id="button5" type="button" value="submit" onclick="userStory5()" />
+		</div>
+		<br>
+
+
+	
+
+<p id="results5">results appended here: </p>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html >
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+    function getResults(){
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/Database3/rest/basedata/" + document.getElementById('id').value,
+            dataType: 'json',
+            headers: {
+                Accept: "application/json",
+                "Access-Control-Allow-Origin": "*"
+            },
+            success: function(resp) {
+            	$("#results").append("\n\n" + JSON.stringify(resp));
+                alert(JSON.stringify(resp));
+            },
+            error: function(e) {
+                alert("error: "+e);
+            }
+        });
+        return false;
+    };
+
+</script>   
+</head>
+<body style="text-align:center;">
+    Test Query Output
+    <input type="text" id="id" name="id" value="1"/>
+   <input id="button" type="button" value="clickme" onclick="getResults()" />
+    <p id="results">results appended here: </p>
+</body>

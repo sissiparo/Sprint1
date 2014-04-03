@@ -1,0 +1,29 @@
+<html >
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+    function upload(){
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/Database3/rest/load/add",
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
+            success: function() {
+            	
+                alert("worked");
+            },
+            error: function(e) {
+                alert("error: "+e);
+            }
+        });
+        return false;
+    };
+
+</script>   
+</head>
+<body style="text-align:center;">
+    
+   <input id="button" type="button" value="upload" onclick="upload()" />
+</body>
